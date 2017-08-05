@@ -15,7 +15,9 @@
         url: '/rooms',
         component: 'roomlist'
       }).state('gameroom', {
-        url: '/room/:id',
+        // url: '/room/:id',
+        url: '/room',
+
         component: 'gameRoom'
       })
 
