@@ -14,6 +14,7 @@
 
     const vm = this;
     vm.serverService = ServerService;
+    vm.messageInfo = undefined;
 
     vm.$onInit = function() {
 
@@ -41,13 +42,16 @@
       //   })
     }
 
-    vm.onKeyup = function($event) {
+    vm.onKeyup = function($event, txt, username) {
 
+      console.log("Username " , username);
       var messageInfo = {
         socketId: "",
-        user: "test",
+        user: username,
         room: "room1",
-        msg: $event.keyCode
+        // msg: $event.keyCode
+        msg: txt
+
       }
 
       // console.log("Key is up... ", $event.keyCode);
@@ -62,12 +66,15 @@
 
     }
 
-
-
     socket.on("on message", function(_messageInfo) {
+      vm.messageInfo = _messageInfo;
+
+            $scope.$applyAsync(function() {
+              $scope.connected = 'TRUE';
+            });
       console.log("Message Info: ", _messageInfo);
     });
-    console.log('Party in the game room bros!!!');
+
   }
 
 

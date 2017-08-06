@@ -10,8 +10,8 @@
 
   <br>
 
-  <input class = "form-control" type = "text"
-   ng-keyup = "$ctrl.onKeyup($event)"
+  <input class = "form-control" ng-model = "txt" type = "text"
+   ng-keyup = "$ctrl.onKeyup($event, txt, $ctrl.serverService.userName)"
    placeholder = "Example: [a-z]*abc">
    <br>
   <button type="button" class = "btn btn-warning"name="button">Submit</button>
@@ -19,12 +19,16 @@
 </div>
 
 
+<!-- <div class="" ng-repeat = "player in $ctrl.serverService.getUsers()"> -->
 
-<div class="" ng-repeat = "player in $ctrl.serverService.getUsers()">
+  <!-- <div class="well" id = "player"> -->
+    <!-- <strong>Player:<p>{{player.name}}</p></strong> -->
+    <!-- <strong>Typing:<p>...</p></strong> -->
+    <p style = "color:#EEEEEE;">
+      Player {{$ctrl.messageInfo.user}}
+    </p>
 
-  <div class="well" id = "player">
-    <strong>Player:<p>{{player.name}}</p></strong>
-    <strong>Typing:<p>...</p></strong>
+    <p style = "color:#EEEEEE;"> is typing {{$ctrl.messageInfo.msg}}</p>
 
 
     <!-- <input type="text" ng-keyup = "$ctrl.onKeyup($event)" placeholder=""> -->
@@ -32,9 +36,9 @@
 
   </div>
 
-  <h1 style = "color:white;">{{player.name}}</h1>
+  <!-- <h1 style = "color:white;">{{player.name}}</h1> -->
 
-</div>
+<!-- </div> -->
 
 <!-- <h2 ng-model = "$ctrl.serverService.message" style = "color:white;"></h2> -->
 
