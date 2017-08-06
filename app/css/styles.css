@@ -1,117 +1,121 @@
-  .appTitle {
-    color: #4477CC;
-    font-family: 'Raleway', sans-serif;
-    /*border: 1px solid #E8F7EE;*/
-    padding: 1px 15px 5px 15px;
-    border-radius: 6px;
-    /*box-shadow: 2px 2px 1px #E8F7EE;*/
-    cursor: pointer;
-  }
+html, body {
+  overflow: scroll;
+}
 
-  .navbar {
-    /*background-color: #011936;*/
-    background: #222222;
-    border: black;
-  }
+.appTitle {
+  color: #4477CC;
+  font-family: 'Raleway', sans-serif;
+  /*border: 1px solid #E8F7EE;*/
+  padding: 1px 15px 5px 15px;
+  border-radius: 6px;
+  /*box-shadow: 2px 2px 1px #E8F7EE;*/
+  cursor: pointer;
+}
 
-  body {
-    height: 100vh;
-    /*background: linear-gradient(to right, #13262F, #4F5D75);*/
-    background: #222222;
-  }
+.navbar {
+  /*background-color: #011936;*/
+  background: #222222;
+  border: black;
+}
 
-  .roomsHeader {
-    font-family: 'Raleway', sans-serif;
-    color: #E8F7EE;
-    text-align: center;
-    text-shadow: 2px 2px 3px #000000;
-  }
+body {
+  height: 100vh;
+  /*background: linear-gradient(to right, #13262F, #4F5D75);*/
+  background: #222222;
+}
 
-  .roomCard:hover {
-    /*box-shadow: 6px 6px 5px #000000;*/
-  }
+.roomsHeader {
+  font-family: 'Raleway', sans-serif;
+  color: #E8F7EE;
+  text-align: center;
+  text-shadow: 2px 2px 3px #000000;
+}
 
-  .panel-heading {
-    /*color: white !important;*/
-    /*background: linear-gradient(to right, #13262F, #4F5D75)*/
-    background: #222222;
-    color:#EEEEEE;
-  }
+.roomCard:hover {
+  /*box-shadow: 6px 6px 5px #000000;*/
+}
 
-  .panel-body {
-    /*background-color: #C9D6EA;*/
-    background: #222222;
-    color:#EEEEEE;
-  }
+.panel-heading {
+  /*color: white !important;*/
+  /*background: linear-gradient(to right, #13262F, #4F5D75)*/
+  background: #222222;
+  color: #EEEEEE;
+}
 
-  .joinButton {
-    /*box-shadow: 2px 2px 1px #13262F;*/
-  }
+.panel-body {
+  /*background-color: #C9D6EA;*/
+  background: #222222;
+  color: #EEEEEE;
+}
 
-  .modal-content {
-    width: 50%;
-    margin: auto;
-    background: #222222;
-    color:#EEEEEE;
-  }
+.joinButton {
+  /*box-shadow: 2px 2px 1px #13262F;*/
+}
 
-  .modal-header {
-    /*background: linear-gradient(to right, #13262F, white);*/
-    background: #222222;
-  }
+.modal-content {
+  width: 50%;
+  margin: auto;
+  background: #222222;
+  color: #EEEEEE;
+}
 
-  .modal-title {
-    color: #E8F7EE;
-  }
+.modal-header {
+  /*background: linear-gradient(to right, #13262F, white);*/
+  background: #222222;
+}
 
-  .landingPageHeader {
-    font-family: 'Raleway', sans-serif;
-    color: #E8F7EE;
-    text-align: center;
-    text-shadow: 2px 2px 3px #000000;
-  }
+.modal-title {
+  color: #E8F7EE;
+}
 
-  .roomsButton {
-    margin: 30% 0 0 45%;
-    box-shadow: 2px 2px 1px #13262F;
-    color: black;
-    background-color: #CAFFB9;
-  }
+.landingPageHeader {
+  font-family: 'Raleway', sans-serif;
+  color: #E8F7EE;
+  text-align: center;
+  text-shadow: 2px 2px 3px #000000;
+}
 
-  /*
+.roomsButton {
+  margin: 30% 0 0 45%;
+  box-shadow: 2px 2px 1px #13262F;
+  color: black;
+  background-color: #CAFFB9;
+}
+
+
+/*
     Game Room
   */
 
-  .gameroomHeader {
-    font-family: 'Raleway', sans-serif;
-    color: #E8F7EE;
-  }
+.gameroomHeader {
+  font-family: 'Raleway', sans-serif;
+  color: #E8F7EE;
+}
 
-  .questions {
-    font-family: 'Raleway', sans-serif;
-    color: #E8F7EE;
-  }
+.questions {
+  font-family: 'Raleway', sans-serif;
+  color: #E8F7EE;
+}
 
-  .answers {
-    font-family: 'Raleway', sans-serif;
-    color: #E8F7EE;
-  }
+.answers {
+  font-family: 'Raleway', sans-serif;
+  color: #E8F7EE;
+}
 
-  .gameboard {
-    display: flex;
-    justify-content:
+.gameboard {
+  display: flex;
+  /*justify-content:*/
+}
 
-  }
+.players {
+  padding: 5%;
+  min-width: 30%;
+}
 
-  .players {
-    padding: 5%;
-    min-width: 30%;
-  }
+.user-area {
+  clear: both;
+}
 
-  .user-area {
-    clear: both;
-  }
-
-  .user-display {
-    background-color: black;
-  }
+.user-display {
+  background-color: black;
+}

@@ -1,7 +1,42 @@
-<div class="page-header">
+<!-- <div class="page-header">
   <h3 class="gameroomHeader">Welcome to Game Room Whatever <small>Subtext for header</small></h3>
 </div>
+ -->
 
+ <h3 style = "color:#DDDDDD;">You: {{$ctrl.serverService.userName}}</h3>
+
+<div class="well">
+  <p>If a programmer wants to create at least 1 function flollowed by zero or three arrays; what is the reqular expression behind this patter?</p>
+
+  <br>
+
+  <input class = "form-control" type = "text"
+   ng-keyup = "$ctrl.onKeyup($event)"
+   placeholder = "Example: [a-z]*abc">
+   <br>
+  <button type="button" class = "btn btn-warning"name="button">Submit</button>
+
+</div>
+
+
+
+<div class="" ng-repeat = "player in $ctrl.serverService.getUsers()">
+
+  <div class="well" id = "player">
+    <strong>Player:<p>{{player.name}}</p></strong>
+    <strong>Typing:<p>...</p></strong>
+
+
+    <!-- <input type="text" ng-keyup = "$ctrl.onKeyup($event)" placeholder=""> -->
+    <!-- Keycode: {{event.keyCode}} -->
+
+  </div>
+
+  <h1 style = "color:white;">{{player.name}}</h1>
+
+</div>
+
+<!-- <h2 ng-model = "$ctrl.serverService.message" style = "color:white;"></h2> -->
 
 
 <!-- <div class="col-xs-4"

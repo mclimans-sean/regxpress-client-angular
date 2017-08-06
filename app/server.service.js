@@ -1,11 +1,20 @@
+const socket = io.connect('http://localhost:3000');
+
+
 (function() {
 
   angular
     .module("regXpress")
     .factory("ServerService", ServerService);
 
-    const socket = io.connect('http://localhost:3000')
+
     var numPlayers = 0;
+
+    var users = [];
+
+    var message = "";
+
+    var username = "";
 
   function ServerService() {
 
@@ -13,27 +22,45 @@
 
       joinRoom(room, username) {
 
-        var roomObj = {
-          name: room.name,
-          users: [],
-          max_numplayers: room.max_numplayers
-        }
+        //
+        // var roomObj = {
+        //   name: room.name,
+        //   users: [],
+        //   max_numplayers: room.max_numplayers
+        // }
+        //
+        // var info = {
+        //   user: username,
+        //   room: roomObj
+        // }
+        //
+        // // console.log(info);
+        //
+        // socket.emit("room", info);
+        //
+        // socket.on("room", function(_info) {
+        //   console.log("Info -----------> ", _info)
+        //   console.log("Room -----------> ", _info.room)
+        //   console.log("Users -----------> ", _info.room.users)
+        //   users = _info.room.users;
+        //   numPlayers ++;
+        //   message = "new user added ";
+        //   console.log("The message ", message);
+        //
+        //
+        //
+        // })
+      },
 
-        var info = {
-          user: username,
-          room: roomObj
-        }
+      startGame() {
+        socket.emit("start game", numPlayers);
+        message = "starting the game...";
 
-        // console.log(info);
+      },
 
-        socket.emit("room", info);
-
-        socket.on("room", function(_info) {
-          console.log("Info -----------> ", _info)
-          console.log("Room -----------> ", _info.room)
-          console.log("Users -----------> ", _info.room.users)
-          numPlayers ++;
-        })
+      getUsers() {
+        console.log("Users ", this.users);
+        return users;
       }
 
     }

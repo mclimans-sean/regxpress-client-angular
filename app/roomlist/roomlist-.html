@@ -1,0 +1,57 @@
+<div class="container">
+  <h2 class="roomsHeader">Rooms Available: </h2>
+  <div class="rooms col-xs-6" ng-repeat="room in $ctrl.rooms">
+    <div class="roomCard panel panel-default">
+      <div class="panel-heading">
+        {{room.name}}
+      </div>
+      <div class="panel-body">
+        <p>
+          Players: {{room.max_numplayers}}
+        </p>
+
+        <input id="first" ng-model="$ctrl.username" class="form-control" required>
+
+        <button style = "color:#222222;" type="button" ui-sref = "gameroom" ng-click="$ctrl.joinRoom(room)">JOIN</button>
+
+        <!-- BUTTON TO JOIN SELECTED SESSION -->
+
+        <!-- <button ng-click="$ctrl.getInfo(room)" type="button" class="joinButton btn btn-success" data-toggle="modal" data-target="#signUpModal">Join</button> -->
+
+        <!-- POPS UP MODAL TO JOIN SESSION -->
+
+        <div class="modal fade" id="signUpModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                <h4 class="modal-title">regXpress</h4>
+              </div>
+              <div class="modal-body">
+
+                <!-- FORM TO ENTER USERNAME -->
+
+                <form>
+                  <div>
+                    <label for="title">Username</label>
+                    <!-- <input id="first" ng-model="$ctrl.username" class="form-control" required> -->
+                  </div>
+                  </br>
+
+                  <!-- BUTTON TO CONTINUE TO SESSION -->
+
+                  <div class="form-group">
+                    <!-- <input type="submit" ui-sref = "gameroom" ng-click="$ctrl.joinRoom(room)" value="Continue" class="btn btn-primary"> -->
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
