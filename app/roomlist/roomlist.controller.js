@@ -37,7 +37,6 @@
       console.log("Joining Room");
       // vm.serverService.joinRoom(room, vm.username)
 
-      //
       var roomObj = {
         name: room.name,
         users: [],
@@ -49,6 +48,9 @@
         user: vm.username,
         room: roomObj
       }
+
+
+      vm.serverService.room = roomObj;
 
       // console.log(info);
 
@@ -64,7 +66,8 @@
         console.log("VMS ", vm.users);
 
         vm.serverService.users = vm.users;
-        vm.serverService.message = "New user added";
+        let lastUserIndex = vm.users.length - 1;
+        vm.serverService.message = `User ${vm.users[lastUserIndex].name} Joined the room`;
         vm.serverService.getUsers = getUsers
 
         $scope.$applyAsync(function() {

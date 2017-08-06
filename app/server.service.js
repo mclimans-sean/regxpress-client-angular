@@ -16,6 +16,8 @@ const socket = io.connect('http://localhost:3000');
 
     var username = "";
 
+    var room = undefined;
+
 
 
     // for testing purposes----
@@ -28,7 +30,7 @@ const socket = io.connect('http://localhost:3000');
     var playerMessage = {
       content:""
     }
-    
+
     return {
 
       joinRoom(room, username) {
