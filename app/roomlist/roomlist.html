@@ -10,7 +10,7 @@
           Players: {{room.max_numplayers}}
         </p>
 
-        <input id="first" ng-model="$ctrl.username" class="form-control" autocomplete = "off" required>
+        <input id="first" ng-model="$ctrl.username" placeholder="Enter your username..."class="form-control" autocomplete = "off" required>
         <br>
         <button class = "btn btn-blue" type="button" ui-sref = "gameroom" ng-click="$ctrl.joinRoom(room)">JOIN</button>
 
