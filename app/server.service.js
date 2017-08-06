@@ -19,7 +19,6 @@ const socket = io.connect('http://localhost:3000');
     var room = undefined;
 
 
-
     // for testing purposes----
     var questions = ["question1", "question2", "question3", "question4"];
     var questionIndex = 0;
@@ -35,34 +34,6 @@ const socket = io.connect('http://localhost:3000');
 
       joinRoom(room, username) {
 
-        //
-        // var roomObj = {
-        //   name: room.name,
-        //   users: [],
-        //   max_numplayers: room.max_numplayers
-        // }
-        //
-        // var info = {
-        //   user: username,
-        //   room: roomObj
-        // }
-        //
-        // // console.log(info);
-        //
-        // socket.emit("room", info);
-        //
-        // socket.on("room", function(_info) {
-        //   console.log("Info -----------> ", _info)
-        //   console.log("Room -----------> ", _info.room)
-        //   console.log("Users -----------> ", _info.room.users)
-        //   users = _info.room.users;
-        //   numPlayers ++;
-        //   message = "new user added ";
-        //   console.log("The message ", message);
-        //
-        //
-        //
-        // })
       },
 
       playerMessage () {
@@ -82,6 +53,10 @@ const socket = io.connect('http://localhost:3000');
 
       getQuestion(index) {
         return questions[index];
+      },
+
+      getRoom() {
+        return room;
       }
 
     }

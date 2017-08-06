@@ -40,6 +40,7 @@
       var roomObj = {
         name: room.name,
         users: [],
+        numPlayersJoined: 0,
         max_numplayers: room.max_numplayers
       }
 
@@ -62,6 +63,8 @@
         console.log("Users -----------> ", _info.room.users)
 
         vm.users = _info.room.users;
+
+        vm.room = _info.room;
 
         console.log("VMS ", vm.users);
 

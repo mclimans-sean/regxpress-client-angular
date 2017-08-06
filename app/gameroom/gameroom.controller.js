@@ -41,6 +41,15 @@
       //     console.log(results);
       //     vm.questions = results.data
       //   })
+
+
+      console.log(vm.serverService.getUsers().length - 1 , " joined the room");
+
+
+      if(vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers ) {
+        console.log("The game should start now");
+        vm.serverService.message = "The game will start in 10 seconds";
+      }
     }
 
     vm.onKeyup = function($event, txt, username) {
@@ -80,6 +89,8 @@
 
       console.log("Message Info: ", _messageInfo);
     });
+
+
 
   }
 
