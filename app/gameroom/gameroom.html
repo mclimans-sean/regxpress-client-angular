@@ -26,11 +26,10 @@
 <!-- <div> -->
 <!-- <div style = "margin:1vw auto; width:50vw; height:300px; border:solid 1px #333333; color:#EEEEEE;"> -->
   <div ng-repeat = "player in $ctrl.serverService.getUsers()">
-    <strong>Player: </strong><p style = "color:#EEEEEE;">{{player.name}}</p>
+    <p style = "color:#EEEEEE;">{{player.name}}:</p>
 
-
-        <p style = "color:#EEEEEE; margin:1vw;">  {{$ctrl.messageInfo.user}} </p>
-        <p style = "color:#EEEEEE; margin:1vw;"> {{$ctrl.playerMessage[player.name]}}</p>
+    <!-- <p style = "color:#EEEEEE; margin:1vw;">  {{$ctrl.messageInfo.user}} </p> -->
+    <p style = "color:#EEEEEE; margin:1vw;"> {{$ctrl.playerMessage[player.name]}}</p>
 
 
   </div>
