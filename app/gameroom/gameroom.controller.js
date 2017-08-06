@@ -54,6 +54,7 @@
 
     vm.onKeyup = function($event, txt, username) {
 
+      console.log("Current room ", vm.serverService.room.name);
       if(txt == "[a-b]*") {
         console.log("You solved the regex")
       }
@@ -61,7 +62,7 @@
       var messageInfo = {
         socketId: "",
         user: username,
-        room: "room1",
+        room: vm.serverService.room.name,
         // msg: $event.keyCode
         msg: txt
 
