@@ -3,40 +3,47 @@
 </div>
  -->
 
- <h3 style = "color:#DDDDDD;">You: {{$ctrl.serverService.userName}}</h3>
+<h3 style="color:#DDDDDD;">You: {{$ctrl.serverService.userName}}</h3>
 
 <div class="well">
   <p>If a programmer wants to create at least 1 function flollowed by zero or three arrays; what is the reqular expression behind this patter?</p>
-
+  <!-- <p>{{$ctrl.serverService.getQuestion(0)}}</p> -->
   <br>
 
-  <input class = "form-control" ng-model = "txt" type = "text"
-   ng-keyup = "$ctrl.onKeyup($event, txt, $ctrl.serverService.userName)"
-   placeholder = "Example: [a-z]*abc">
-   <br>
-  <button type="button" class = "btn btn-warning"name="button">Submit</button>
+  <input class="form-control" ng-model="txt" type="text" ng-keyup="$ctrl.onKeyup($event, txt, $ctrl.serverService.userName)" placeholder="Example: [a-z]*abc">
+  <br>
+  <button type="button" class="btn btn-warning" name="button">Submit</button>
 
 </div>
 
 
 <!-- <div class="" ng-repeat = "player in $ctrl.serverService.getUsers()"> -->
 
-  <!-- <div class="well" id = "player"> -->
-    <!-- <strong>Player:<p>{{player.name}}</p></strong> -->
-    <!-- <strong>Typing:<p>...</p></strong> -->
-    <p style = "color:#EEEEEE;">
-      Player {{$ctrl.messageInfo.user}}
-    </p>
+<!-- <div class="well" id = "player"> -->
+<!-- <strong>Player:<p>{{player.name}}</p></strong> -->
+<!-- <strong>Typing:<p>...</p></strong> -->
 
-    <p style = "color:#EEEEEE;"> is typing {{$ctrl.messageInfo.msg}}</p>
+<!-- <div> -->
+<!-- <div style = "margin:1vw auto; width:50vw; height:300px; border:solid 1px #333333; color:#EEEEEE;"> -->
+  <div ng-repeat = "player in $ctrl.serverService.getUsers()">
+    <strong>Player: </strong><p style = "color:#EEEEEE;">{{player.name}}</p>
 
 
-    <!-- <input type="text" ng-keyup = "$ctrl.onKeyup($event)" placeholder=""> -->
-    <!-- Keycode: {{event.keyCode}} -->
+        <p style = "color:#EEEEEE; margin:1vw;">  {{$ctrl.messageInfo.user}} </p>
+        <p style = "color:#EEEEEE; margin:1vw;"> {{$ctrl.playerMessage[player.name]}}</p>
+
 
   </div>
 
-  <!-- <h1 style = "color:white;">{{player.name}}</h1> -->
+<!-- </div> -->
+
+
+<!-- <input type="text" ng-keyup = "$ctrl.onKeyup($event)" placeholder=""> -->
+<!-- Keycode: {{event.keyCode}} -->
+
+</div>
+
+<!-- <h1 style = "color:white;">{{player.name}}</h1> -->
 
 <!-- </div> -->
 

@@ -15,6 +15,7 @@
     const vm = this;
     vm.serverService = ServerService;
     vm.messageInfo = undefined;
+    vm.playerMessage = {};
 
     vm.$onInit = function() {
 
@@ -44,6 +45,9 @@
 
     vm.onKeyup = function($event, txt, username) {
 
+      if(txt == "[a-b]*") {
+        console.log("You solved the regex")
+      }
       console.log("Username " , username);
       var messageInfo = {
         socketId: "",
@@ -68,10 +72,12 @@
 
     socket.on("on message", function(_messageInfo) {
       vm.messageInfo = _messageInfo;
+      vm.playerMessage[_messageInfo.user] = _messageInfo.msg;
+      console.log("VESERVERICE " ,   vm.playerMessage[_messageInfo.user]);
+      $scope.$applyAsync(function() {
+        $scope.connected = 'TRUE';
+      });
 
-            $scope.$applyAsync(function() {
-              $scope.connected = 'TRUE';
-            });
       console.log("Message Info: ", _messageInfo);
     });
 

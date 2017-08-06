@@ -7,7 +7,9 @@ html, body {
   font-family: 'Raleway', sans-serif;
   /*border: 1px solid #E8F7EE;*/
   padding: 1px 15px 5px 15px;
-  border-radius: 6px;
+  /*border-radius: 6px;*/
+  border-top: solid 0.1px #333333;
+  border-bottom: solid 0.1px #333333;
   /*box-shadow: 2px 2px 1px #E8F7EE;*/
   cursor: pointer;
 }
@@ -24,11 +26,23 @@ body {
   background: #222222;
 }
 
+main {
+  /*width:60vw;
+  margin: 1vw auto;*/
+}
+
+.btn-blue {
+  background: #6699FF;
+  color:#EEEEEE;
+  margin: 1vw auto;
+  text-align: center;
+}
+
 .roomsHeader {
   font-family: 'Raleway', sans-serif;
   color: #E8F7EE;
   text-align: center;
-  text-shadow: 2px 2px 3px #000000;
+  /*text-shadow: 2px 2px 3px #000000;*/
 }
 
 .roomCard:hover {
@@ -45,7 +59,7 @@ body {
 .panel-body {
   /*background-color: #C9D6EA;*/
   background: #222222;
-  color: #EEEEEE;
+  color: #DDDDDD;
 }
 
 .joinButton {

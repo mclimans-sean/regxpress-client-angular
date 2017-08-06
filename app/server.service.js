@@ -16,8 +16,19 @@ const socket = io.connect('http://localhost:3000');
 
     var username = "";
 
+
+
+    // for testing purposes----
+    var questions = ["question1", "question2", "question3", "question4"];
+    var questionIndex = 0;
+    // ------------------------
+
   function ServerService() {
 
+    var playerMessage = {
+      content:""
+    }
+    
     return {
 
       joinRoom(room, username) {
@@ -52,6 +63,10 @@ const socket = io.connect('http://localhost:3000');
         // })
       },
 
+      playerMessage () {
+        return playerMessage;
+      },
+
       startGame() {
         socket.emit("start game", numPlayers);
         message = "starting the game...";
@@ -61,6 +76,10 @@ const socket = io.connect('http://localhost:3000');
       getUsers() {
         console.log("Users ", this.users);
         return users;
+      },
+
+      getQuestion(index) {
+        return questions[index];
       }
 
     }

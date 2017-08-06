@@ -1,7 +1,7 @@
-<div class="container">
-  <h2 class="roomsHeader">Rooms Available: </h2>
-  <div class="rooms col-xs-6" ng-repeat="room in $ctrl.rooms">
-    <div class="roomCard panel panel-default">
+<div class="container" style = "border:solid 0px #333333;">
+  <h2 class="roomsHeader">Rooms Available: </h2><br>
+  <div class="rooms col-xs-12" ng-repeat="room in $ctrl.rooms">
+    <div class="roomCard" style = "border-bottom: solid 2px #333333;">
       <div class="panel-heading">
         {{room.name}}
       </div>
@@ -10,9 +10,9 @@
           Players: {{room.max_numplayers}}
         </p>
 
-        <input id="first" ng-model="$ctrl.username" class="form-control" required>
-
-        <button style = "color:#222222;" type="button" ui-sref = "gameroom" ng-click="$ctrl.joinRoom(room)">JOIN</button>
+        <input id="first" ng-model="$ctrl.username" class="form-control" autocomplete = "off" required>
+        <br>
+        <button class = "btn btn-blue" type="button" ui-sref = "gameroom" ng-click="$ctrl.joinRoom(room)">JOIN</button>
 
       </div>
     </div>
