@@ -3,13 +3,13 @@ html, body {
 }
 
 .appTitle {
-  color: #4477CC;
+  color: #44BBFF;
   font-family: 'Raleway', sans-serif;
   /*border: 1px solid #E8F7EE;*/
   padding: 1px 15px 5px 15px;
   /*border-radius: 6px;*/
-  border-top: solid 0.1px #333333;
-  border-bottom: solid 0.1px #333333;
+  /*border-top: solid 0.1px #333333;*/
+  /*border-bottom: solid 0.1px #333333;*/
   /*box-shadow: 2px 2px 1px #E8F7EE;*/
   cursor: pointer;
 }
@@ -90,10 +90,15 @@ main {
 }
 
 .roomsButton {
-  margin: 30% 0 0 45%;
-  box-shadow: 2px 2px 1px #13262F;
-  color: black;
-  background-color: #CAFFB9;
+  /*margin: 30% 0 0 45%;*/
+  margin: 1vw auto;
+  /*box-shadow: 2px 2px 1px #13262F;*/
+  color: #EEEEEE;
+  /*background-color: #CAFFB9;*/
+  background: #4488FF;
+  text-align: center;
+  display: block;
+  width: 30%;
 }
 
 

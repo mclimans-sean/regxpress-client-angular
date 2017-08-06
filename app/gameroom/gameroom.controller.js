@@ -43,22 +43,37 @@
       //   })
 
 
-      console.log(vm.serverService.getUsers().length - 1 , " joined the room");
+      console.log(vm.serverService.getUsers().length - 1, " joined the room");
 
 
-      if(vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers ) {
+      if (vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers) {
         console.log("The game should start now");
-        vm.serverService.message = "The game will start in 10 seconds";
+        socket.emit("start game", vm.serverService.room.max_numplayers);
+
       }
+
+
+
+      socket.on("start game", function(numPlayers) {
+        console.log("NumPlayers ", numPlayers)
+        for (var i = 0; i < numPlayers; i++) {
+          // console.log("USER ", info.room.users[i].name)
+          // addNewPlayer(serverInfo.room.users[i].name);
+          vm.serverService.message = "The game will start in 10 seconds";
+
+        }
+      });
+
+
     }
 
     vm.onKeyup = function($event, txt, username) {
 
       console.log("Current room ", vm.serverService.room.name);
-      if(txt == "[a-b]*") {
+      if (txt == "[a-b]*") {
         console.log("You solved the regex")
       }
-      console.log("Username " , username);
+      console.log("Username ", username);
       var messageInfo = {
         socketId: "",
         user: username,
@@ -83,7 +98,7 @@
     socket.on("on message", function(_messageInfo) {
       vm.messageInfo = _messageInfo;
       vm.playerMessage[_messageInfo.user] = _messageInfo.msg;
-      console.log("VESERVERICE " ,   vm.playerMessage[_messageInfo.user]);
+      console.log("VESERVERICE ", vm.playerMessage[_messageInfo.user]);
       $scope.$applyAsync(function() {
         $scope.connected = 'TRUE';
       });
