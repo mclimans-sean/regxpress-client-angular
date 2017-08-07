@@ -1,0 +1,181 @@
+@keyframes fade {
+  0% {
+    background-color: #011936;
+    border: 1px solid grey;
+    color: white;
+  }
+  100% {
+    background-color: #4d774d;
+    border: 1px solid black;
+    color: black;
+  }
+}
+
+.landingPage {
+  display: flex;
+  align-items: center;
+}
+
+.rightSide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 33%;
+  margin: auto;
+}
+
+.pageInfoHeader {
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.pageInfo {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.roomsButton {
+  box-shadow: 1px 1px 1px grey;
+  color: black;
+  background-color: #4d774d;
+  height: 75px;
+  width: 150px;
+  border-radius: 20px;
+  font-size: 28px;
+  animation: fade 7s;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.appTitle {
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  border: 1px solid black;
+  padding: 1px 15px 5px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  animation: fade 7s;
+  background-color: #4d774d;
+}
+
+.appTitle:hover {}
+
+.roomsButton:hover {
+  /*box-shadow: 0px 0px 1px #13262F;*/
+  color: black;
+  background-color: #68a568;
+  box-shadow: 2px 2px 1px black;
+}
+
+.navbar {
+  background-color: #011936;
+  border: black;
+}
+
+body {
+  background-color: #173753
+}
+
+.imageDemo {
+  height: 400px;
+  width: 500px;
+}
+
+.game {
+  width: 500px;
+  height: 400px;
+  margin: 10px;
+  /*float: left;*/
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 1px 2px grey;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.game .mask, .game .content {
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0
+}
+
+.game img {
+  display: block;
+  position: relative
+}
+
+.game h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+  padding: 10px;
+  background: #011936;
+  color: #CAFFB9;
+  margin: 20px 0 0 0
+}
+
+.game p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  position: relative;
+  color: #fff;
+  padding: 10px 20px 20px;
+  text-align: center
+}
+
+.game a.info:hover {
+  box-shadow: 0 0 5px #000
+}
+
+.game-info img {
+  transition: all 0.7s ease-out;
+  opacity: 1;
+}
+
+.game-info .mask {
+  background-color: #263f26;
+  transform: rotate(0deg) scale(1);
+  opacity: 0;
+  transition: all 0.7s ease-out;
+  transform: translateY(-200px) rotate(180deg);
+}
+
+.game-info h2 {
+  transform: translateY(-200px);
+  transition: all 0.7s ease-in-out;
+}
+
+.game-info p {
+  transform: translateY(-200px);
+  transition: all 0.7s ease-in-out;
+}
+
+.game-info:hover img {
+  transform: rotate(720deg) scale(0);
+  opacity: 0;
+}
+
+.game-info:hover .mask {
+  opacity: 1;
+  transform: translateY(0px) rotate(0deg);
+  transition-delay: 0.9s;
+}
+
+.game-info:hover h2 {
+  transform: translateY(0px);
+  transition-delay: 0.7s;
+}
+
+.game-info:hover p {
+  transform: translateY(0px);
+  transition-delay: 0.6s;
+}

@@ -5,40 +5,38 @@ html, body {
 .appTitle {
   color: #44BBFF;
   font-family: 'Raleway', sans-serif;
-  /*border: 1px solid #E8F7EE;*/
+  border: 1px solid #E8F7EE;
   padding: 1px 15px 5px 15px;
-  /*border-radius: 6px;*/
-  /*border-top: solid 0.1px #333333;*/
-  /*border-bottom: solid 0.1px #333333;*/
-  /*box-shadow: 2px 2px 1px #E8F7EE;*/
+  border-radius: 6px;
+  */
+  /*border-top: solid 0.1px #333333;
+  border-bottom: solid 0.1px #333333;*/
+  box-shadow: 2px 2px 1px #E8F7EE;
   cursor: pointer;
 }
 
 .margined {
-    margin: 1vw auto;
-    width: 90%;
+  margin: 1vw auto;
+  width: 90%;
 }
 
 .navbar {
-  /*background-color: #011936;*/
+  background-color: #011936;
   background: #222222;
   border: black;
+  margin-bottom: 5px;
 }
 
 body {
   height: 100vh;
-  /*background: linear-gradient(to right, #13262F, #4F5D75);*/
-  background: #222222;
+  background: linear-gradient(to right, #13262F, #4F5D75);
+  /*background: #222222;*/
 }
 
-main {
-  /*width:60vw;
-  margin: 1vw auto;*/
-}
 
 .btn-blue {
   background: #6699FF;
-  color:#EEEEEE;
+  color: #EEEEEE;
   margin: 1vw auto;
   text-align: center;
 }
@@ -47,18 +45,16 @@ main {
   font-family: 'Raleway', sans-serif;
   color: #E8F7EE;
   text-align: center;
-  /*text-shadow: 2px 2px 3px #000000;*/
 }
 
 .roomCard:hover {
-  /*box-shadow: 6px 6px 5px #000000;*/
+  box-shadow: 2px 2px 3px #000000;
 }
 
 .panel-heading {
-  /*color: white !important;*/
-  /*background: linear-gradient(to right, #13262F, #4F5D75)*/
-  background: #222222;
-  color: #EEEEEE;
+  color: white !important;
+  background: linear-gradient(to right, #13262F, #4F5D75);
+  /*color: #EEEEEE;*/
 }
 
 .panel-body {
@@ -110,6 +106,9 @@ a {
   width: 30%;
 }
 
+.roomNames {
+  text-transform: uppercase;
+}
 
 /*
     Game Room

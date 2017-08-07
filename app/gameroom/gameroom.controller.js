@@ -12,6 +12,7 @@
   // function gameRoomController($stateParams, $http) {
   function gameRoomController(ServerService, $scope) {
 
+
     const vm = this;
     vm.serverService = ServerService;
     vm.messageInfo = undefined;
@@ -19,7 +20,7 @@
 
     vm.$onInit = function() {
 
-      // $http.get(roomURL + $stateParams.id)
+      // $http.get(roomURL)
       //   .then(result => {
       //     console.log(result);
       //   })

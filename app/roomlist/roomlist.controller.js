@@ -52,10 +52,10 @@
 
 
       var info = {
-        user: vm.username,
+        user: room.username,
         room: roomObj
       }
-
+      console.log(info);
 
       vm.serverService.room = roomObj;
 
