@@ -6,12 +6,18 @@
   const roomsURL = 'https://regxpress.herokuapp.com/rooms'
   // const socket = io.connect('http://localhost:3000');
 
-  function RoomListController($http, ServerService, $scope) {
+  function RoomListController($http, $state, ServerService, $scope) {
     const vm = this
     vm.users = [];
     vm.message = "";
     vm.serverService = ServerService;
     vm.numPlayers = 0;
+
+
+
+    vm.changeState = function() {
+      $state.go('gameroom');
+    }
 
     vm.$onInit = function() {
 
@@ -73,12 +79,89 @@
         vm.serverService.message = `User ${vm.users[lastUserIndex].name} Joined the room`;
         vm.serverService.getUsers = getUsers
 
+
+
+
+
+
+        console.log(vm.serverService.getUsers().length - 1, " joined the room");
+        //
+        //
+        if (vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers) {
+          console.log("The game should start now");
+
+          let info = {
+            numPlayers: vm.serverService.room.max_numplayers,
+            room: vm.serverService.room
+          }
+          socket.emit("start game", info);
+
+          $scope.$applyAsync(function() {
+            $scope.connected = 'TRUE';
+          });
+
+        }
+
+
+
+
+
+
+
+
         $scope.$applyAsync(function() {
           $scope.connected = 'TRUE';
         });
 
+
+
         vm.serverService.userName = vm.username;
+        // $window.location.href = '/room';
+
       });
+
+
+
+
+
+
+
+
+
+
+
+      socket.on("start game", function(_info) {
+
+        console.log("NumPlayers ", _info.numPlayers);
+        console.log("To room ", _info.room);
+        for (var i = 0; i < _info.numPlayers; i++) {
+          // console.log("USER ", info.room.users[i].name)
+          // addNewPlayer(serverInfo.room.users[i].name);
+
+          $state.go('gameroom');
+
+          vm.serverService.message = "The game will start in 10 seconds";
+
+        }
+
+
+
+        $scope.$applyAsync(function() {
+          $scope.connected = 'TRUE';
+        });
+
+      });
+
+
+
+
+
+
+
+
+      // $state.go('gameroom');
+
+
 
       // vm.username = ''
 

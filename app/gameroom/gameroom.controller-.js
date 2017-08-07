@@ -43,45 +43,45 @@
       //   })
 
 
-      // console.log(vm.serverService.getUsers().length - 1, " joined the room");
-      //
-      //
-      // if (vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers) {
-      //   console.log("The game should start now");
-      //
-      //   let info = {
-      //     numPlayers: vm.serverService.room.max_numplayers,
-      //     room: vm.serverService.room
-      //   }
-      //   socket.emit("start game", info);
-      //
-      //   $scope.$applyAsync(function() {
-      //     $scope.connected = 'TRUE';
-      //   });
-      //
-      // }
+      console.log(vm.serverService.getUsers().length - 1, " joined the room");
+
+
+      if (vm.serverService.getUsers().length - 1 >= vm.serverService.room.max_numplayers) {
+        console.log("The game should start now");
+
+        let info = {
+          numPlayers: vm.serverService.room.max_numplayers,
+          room: vm.serverService.room
+        }
+        socket.emit("start game", info);
+
+        $scope.$applyAsync(function() {
+          $scope.connected = 'TRUE';
+        });
+
+      }
 
 
 
-      // socket.on("start game", function(_info) {
-      //
-      //   console.log("NumPlayers ", _info.numPlayers);
-      //   console.log("To room ", _info.room);
-      //   for (var i = 0; i < _info.numPlayers; i++) {
-      //     // console.log("USER ", info.room.users[i].name)
-      //     // addNewPlayer(serverInfo.room.users[i].name);
-      //
-      //     vm.serverService.message = "The game will start in 10 seconds";
-      //
-      //   }
-      //
-      //
-      //
-      //   $scope.$applyAsync(function() {
-      //     $scope.connected = 'TRUE';
-      //   });
-      //
-      // });
+      socket.on("start game", function(_info) {
+
+        console.log("NumPlayers ", _info.numPlayers);
+        console.log("To room ", _info.room);
+        for (var i = 0; i < _info.numPlayers; i++) {
+          // console.log("USER ", info.room.users[i].name)
+          // addNewPlayer(serverInfo.room.users[i].name);
+
+          vm.serverService.message = "The game will start in 10 seconds";
+
+        }
+
+
+
+        $scope.$applyAsync(function() {
+          $scope.connected = 'TRUE';
+        });
+
+      });
 
 
     }

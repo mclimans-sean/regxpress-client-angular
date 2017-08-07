@@ -14,6 +14,11 @@ html, body {
   cursor: pointer;
 }
 
+.margined {
+    margin: 1vw auto;
+    width: 90%;
+}
+
 .navbar {
   /*background-color: #011936;*/
   background: #222222;
@@ -80,6 +85,10 @@ main {
 
 .modal-title {
   color: #E8F7EE;
+}
+
+a {
+  text-decoration: none;
 }
 
 .landingPageHeader {

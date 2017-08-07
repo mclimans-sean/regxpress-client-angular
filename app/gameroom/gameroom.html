@@ -3,6 +3,8 @@
 </div>
  -->
 
+<div class = "container margined">
+
 <small style = "color:#EEEEEE;">{{$ctrl.serverService.message}}</small>
 
 <h3 style="color:#DDDDDD;">You: {{$ctrl.serverService.userName}}</h3>
@@ -27,8 +29,10 @@
 
 <!-- <div> -->
 <!-- <div style = "margin:1vw auto; width:50vw; height:300px; border:solid 1px #333333; color:#EEEEEE;"> -->
+
+
   <div ng-repeat = "player in $ctrl.serverService.getUsers()">
-    <p style = "color:#EEEEEE;">{{player.name}}:</p>
+    <p style = "color:#EEEEEE;">{{player.name}}</p>
 
     <!-- <p style = "color:#EEEEEE; margin:1vw;">  {{$ctrl.messageInfo.user}} </p> -->
     <p style = "color:#EEEEEE; margin:1vw;"> {{$ctrl.playerMessage[player.name]}}</p>
@@ -41,6 +45,8 @@
 
 <!-- <input type="text" ng-keyup = "$ctrl.onKeyup($event)" placeholder=""> -->
 <!-- Keycode: {{event.keyCode}} -->
+
+</div>
 
 </div>
 
