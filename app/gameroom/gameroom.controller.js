@@ -89,7 +89,7 @@
     vm.onKeyup = function($event, txt, username) {
 
       console.log("Current room ", vm.serverService.room.name);
-      if (txt == "[a-b]*") {
+      if (txt == "[a-b]*" || txt == "pass") {
         console.log("You solved the regex")
       }
       console.log("Username ", username);

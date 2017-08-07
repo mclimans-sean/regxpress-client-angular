@@ -63,10 +63,12 @@
 
       socket.emit("room", info);
 
+
+
       socket.on("room", function(_info) {
-        console.log("Info -----------> ", _info)
-        console.log("Room -----------> ", _info.room)
-        console.log("Users -----------> ", _info.room.users)
+        console.log("Info -----------> ", _info);
+        console.log("Room -----------> ", _info.room);
+        console.log("Users -----------> ", _info.room.users);
 
         vm.users = _info.room.users;
 
@@ -102,32 +104,14 @@
 
         }
 
-
-
-
-
-
-
-
         $scope.$applyAsync(function() {
           $scope.connected = 'TRUE';
         });
-
-
 
         vm.serverService.userName = vm.username;
         // $window.location.href = '/room';
 
       });
-
-
-
-
-
-
-
-
-
 
 
       socket.on("start game", function(_info) {
@@ -145,9 +129,6 @@
         }
 
 
-
-
-
       });
 
       socket.on("count down", function(count) {
@@ -155,13 +136,21 @@
         vm.serverService.message = `Time to start ${count / 1000}`;
 
 
-              $scope.$applyAsync(function() {
-                $scope.connected = 'TRUE';
-              });
+        $scope.$applyAsync(function() {
+          $scope.connected = 'TRUE';
+        });
       });
 
 
+      socket.on("error room", function(_info) {
+        console.log("Room is full");
+        vm.serverService.message = "Room is full";
 
+        $scope.$applyAsync(function() {
+          $scope.connected = 'TRUE';
+        });
+
+      });
 
 
 

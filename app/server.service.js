@@ -52,6 +52,7 @@ const socket = io.connect('http://localhost:3000');
       },
 
       getQuestion(index) {
+        index ++;
         return questions[index];
       },
 
