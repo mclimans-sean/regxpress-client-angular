@@ -152,6 +152,10 @@
 
       });
 
+      socket.on("count down", function(count) {
+        console.log("Time to start ", count);
+      });
+
 
 
 
