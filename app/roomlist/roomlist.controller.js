@@ -82,7 +82,7 @@
 
 
 
-
+        vm.serverService.message = "waiting for other players to join";
 
         console.log(vm.serverService.getUsers().length - 1, " joined the room");
         //
@@ -146,16 +146,19 @@
 
 
 
-        $scope.$applyAsync(function() {
-          $scope.connected = 'TRUE';
-        });
+
 
       });
 
       socket.on("count down", function(count) {
         console.log("Time to start ", count);
-      });
+        vm.serverService.message = `Time to start ${count / 1000}`;
 
+
+              $scope.$applyAsync(function() {
+                $scope.connected = 'TRUE';
+              });
+      });
 
 
 
