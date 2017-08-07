@@ -2,7 +2,7 @@
 (function() {
 
   angular
-    .module('regXpress', ["ui.router"])
+    .module('regXpress', ["ui.router", "ngAudio"])
     .config(function ($stateProvider, $urlServiceProvider, $locationProvider) {
 
       // $locationProvider.html5Mode(true)
